@@ -30,6 +30,14 @@
     margin: 2rem;
 }
 
+.details {
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    margin: 2rem;
+    color: #e27d60
+}
+
 .board {
     width: auto;
     background-color: #e8a87c;

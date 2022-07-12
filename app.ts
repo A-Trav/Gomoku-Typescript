@@ -1,4 +1,4 @@
-import Board from "./board"
+import Game from "./game"
 
-const game = new Board(5, 5)
-document.getElementById('game')?.appendChild(game.element)
+const game = new Game(5, 5)
+document.getElementById('main')?.appendChild(game.element)
