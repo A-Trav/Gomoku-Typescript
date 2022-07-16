@@ -63,7 +63,8 @@ export default class Player {
                         else
                             break;
                     }
-                    if (counter === 5 && !board[i - 1].includes(board[i][j])) // check that the chain isn't longer than 5
+                    // check that the chain isn't longer than 5
+                    if (counter === 5 && (i - 1 < 0 || !board[i - 1].includes(board[i][j])))
                         return true;
                 }
             }
@@ -87,7 +88,7 @@ export default class Player {
                         else
                             break;
                     }
-                    if (counter === 5 && !board[i - 1].includes(board[i][j] - 1))
+                    if (counter === 5 && (i - 1 < 0 || !board[i - 1].includes(board[i][j] - 1)))
                         return true;
                 }
             }
@@ -103,7 +104,7 @@ export default class Player {
                 for (let j = 0; j < board[i].length; j++) { // tile 
                     counter = 0;
                     tile = board[i][j];
-                    if (tile > 4) {
+                    if (tile >= 4) {
                         for (let k = i; k < board.length; k++) {
                             if (board[k].length > 0 && board[k].includes(tile)) {
                                 tile--;
@@ -112,7 +113,7 @@ export default class Player {
                             else
                                 break;
                         }
-                        if (counter === 5 && !board[i - 1].includes(board[i][j] + 1))
+                        if (counter === 5 && (i - 1 < 0 || !board[i - 1].includes(board[i][j] + 1)))
                             return true;
                     }
                 }
