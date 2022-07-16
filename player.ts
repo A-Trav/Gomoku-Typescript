@@ -57,15 +57,13 @@ export default class Player {
             if (i <= board.length - 5 && board[i].length > 0) {
                 for (let j = 0; j < board[i].length; j++) { // tile 
                     counter = 0;
-                    for (let k = 0; k < board.length; k++) {
-                        if (board[k].length > 0) {
-                            if (board[k].includes(board[i][j]))
-                                counter++;
-                            else
-                                break;
-                        }
+                    for (let k = i; k < board.length; k++) {
+                        if (board[k].length > 0 && board[k].includes(board[i][j]))
+                            counter++;
+                        else
+                            break;
                     }
-                    if (counter === 5)
+                    if (counter === 5 && !board[i - 1].includes(board[i][j])) // check that the chain isn't longer than 5
                         return true;
                 }
             }
@@ -81,17 +79,15 @@ export default class Player {
                 for (let j = 0; j < board[i].length; j++) { // tile 
                     counter = 0;
                     tile = board[i][j];
-                    for (let k = 0; k < board.length; k++) {
-                        if (board[k].length > 0) {
-                            if (board[k].includes(tile)) {
-                                tile++;
-                                counter++;
-                            }
-                            else
-                                break;
+                    for (let k = i; k < board.length; k++) {
+                        if (board[k].length > 0 && board[k].includes(tile)) {
+                            tile++;
+                            counter++;
                         }
+                        else
+                            break;
                     }
-                    if (counter === 5)
+                    if (counter === 5 && !board[i - 1].includes(board[i][j] - 1))
                         return true;
                 }
             }
@@ -108,17 +104,15 @@ export default class Player {
                     counter = 0;
                     tile = board[i][j];
                     if (tile > 4) {
-                        for (let k = 0; k < board.length; k++) {
-                            if (board[k].length > 0) {
-                                if (board[k].includes(tile)) {
-                                    tile--;
-                                    counter++;
-                                }
-                                else
-                                    break;
+                        for (let k = i; k < board.length; k++) {
+                            if (board[k].length > 0 && board[k].includes(tile)) {
+                                tile--;
+                                counter++;
                             }
+                            else
+                                break;
                         }
-                        if (counter === 5)
+                        if (counter === 5 && !board[i - 1].includes(board[i][j] + 1))
                             return true;
                     }
                 }
