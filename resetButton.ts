@@ -1,3 +1,4 @@
+// Reset button class, used to reset the game.
 export default class ResetButton {
     element: HTMLButtonElement;
 

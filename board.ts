@@ -1,5 +1,6 @@
 import Row from "./row"
 
+// Gomoku Board class
 export default class Board {
     rows: Row[];
     element: HTMLDivElement;

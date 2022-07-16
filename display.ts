@@ -1,3 +1,6 @@
+
+// UI Textual display class, used to display
+// current player and win/draw information.
 export default class Display {
     element: HTMLHeadingElement;
 

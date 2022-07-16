@@ -4,6 +4,7 @@ enum STATE {
     PLAYER2 = 'PLAYER2'
 }
 
+// Tile class, used to display a tile for the board.
 export default class Tile {
     id: number;
     status: STATE;

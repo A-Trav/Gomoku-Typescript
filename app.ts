@@ -1,8 +1,8 @@
 import Game from "./game"
 
-let game;
+// Gomoku game is created and run here. 
 let main = document.getElementById('main');
 if (main !== null) {
-    game = new Game(5, 5, main, 2);
+    const game = new Game(15, 15, main, 2);
 }
 

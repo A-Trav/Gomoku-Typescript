@@ -1,5 +1,7 @@
 import Board from "./board";
 
+// Gomoku player class, this class
+// contains all logic on a single player of the game
 export default class Player {
     name: string;
     board: Board;

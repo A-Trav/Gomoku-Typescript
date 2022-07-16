@@ -4,9 +4,11 @@ import Player from "./player";
 
 enum PLAYERS {
     PLAYER1 = 'PLAYER1',
-    PLAYER2 = 'PLAYER2',
+    PLAYER2 = 'PLAYER2'
 }
 
+// Gomoku game class, this class 
+// controls all game logic.
 export default class Game {
 
     board: Board;

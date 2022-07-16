@@ -5,6 +5,8 @@ const GAMEPREFIX = 'Turn: ';
 const GAMEOVERSUFFIX = ' has won the game';
 const GAMEDRAW = 'Game over, Draw';
 
+// Controller class to control the UI textual display
+// and the reset button.
 export default class DisplayController {
     display: Display;
     resetButton: ResetButton;
