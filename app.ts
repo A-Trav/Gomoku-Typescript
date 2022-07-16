@@ -1,4 +1,8 @@
 import Game from "./game"
 
-const game = new Game(5, 5)
-document.getElementById('main')?.appendChild(game.element)
+let game;
+let main = document.getElementById('main');
+if (main !== null) {
+    game = new Game(5, 5, main, 2);
+}
+

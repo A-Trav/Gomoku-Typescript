@@ -5,34 +5,34 @@ enum STATE {
 }
 
 export default class Tile {
-    id: number
-    status: STATE
-    element: HTMLDivElement
-    playedEvent: Event;
+    id: number;
+    status: STATE;
+    element: HTMLDivElement;
+    turnEvent: Event;
 
     constructor(id: number) {
-        this.id = id
-        this.status = STATE.AVAILABLE
-        this.element = document.createElement('div')
-        this.element.classList.add('tile')
-        this.element.classList.add(this.status.toLowerCase())
-        this.playedEvent = new Event('played')
+        this.id = id;
+        this.status = STATE.AVAILABLE;
+        this.element = document.createElement('div');
+        this.element.classList.add('tile');
+        this.element.classList.add(this.status.toLowerCase());
+        this.turnEvent = new Event('turn');
         this.element.addEventListener('click', () => {
-            this.onClick()
+            this.onClick();
         })
     }
 
     onClick() {
         if (this.status === STATE.AVAILABLE) {
-            this.element.classList.remove(this.status.toLowerCase())
-            this.element.classList.add(document.getElementsByClassName('player')[0].id.toLowerCase())
-            this.status = <STATE>document.getElementsByClassName('player')[0].id
-            this.element.dispatchEvent(this.playedEvent)
+            this.element.classList.remove(this.status.toLowerCase());
+            this.element.classList.add(document.getElementsByClassName('player')[0].id.toLowerCase());
+            this.status = <STATE>document.getElementsByClassName('player')[0].id;
+            this.element.dispatchEvent(this.turnEvent);
         }
     }
 
-    get isSelected() {
-        return this.status !== STATE.AVAILABLE
+    isPlayersTile(player: string) {
+        if ((player as STATE) in STATE)
+            return this.status === (player as STATE);
     }
-
 }

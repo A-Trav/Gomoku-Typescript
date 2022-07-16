@@ -30,6 +30,36 @@
     margin: 2rem;
 }
 
+.displayController {
+    width: 50rem;
+    background-color: #e8a87c;
+    border: 1.5px solid #000;
+    flex-direction: column;
+    margin: auto;
+    padding: .75rem;
+    display: flex;
+    justify-content: center;
+}
+
+.gameDisplay {
+    color: #fff;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #e27d60;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.resetButton {
+    width: auto;
+    color: #000;
+    text-align: center;
+    margin: auto;
+    padding: .4rem;
+    font-size: 1rem;
+}
+
 .details {
     flex-direction: row;
     justify-content: center;
